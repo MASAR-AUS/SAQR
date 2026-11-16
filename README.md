@@ -25,7 +25,8 @@ repo's **Releases** page (`v3.0-gc7`). The 6-class model (**v2**, Release `v2.0-
 architecture A's calibrated layer on the 7-class model, quality gate off. The visor shows **nothing** when the set is
 only no-defect and "POSSIBLE DENT: check" when it mixes a defect with no-defect. On the corrected test half a defect is
 shown as nothing 0.3% of the time and the visor speaks on 28.1% of clean crops. OOD α is 0.05
-(0.025 per detector); temperature T = 1.089562 is fitted with equal weight per validation family; CP α remains 0.10, with 91.0% observed coverage and 1.49% OOD false rejection
+(0.025 per detector); temperature T = 1.089562 is fitted with equal weight per validation family and brings the test-half
+calibration error (ECE, 15 bins) from 0.049 to 0.040; CP α remains 0.10, with 91.0% observed coverage and 1.49% OOD false rejection
 ([results](1_main_model_resnet18/enhanced_res/arch_a/results/archB/README.md)).
 
 **Architecture A** (27 October) is the same layer on the 6-class v2, with the quality gate on; the gates run in parallel.
@@ -33,7 +34,7 @@ The numbers below are for A.
 The model's output goes through a calibrated decision layer instead of the fixed top-2 list:
 - **Quality gate:** "BAD IMAGE: re-take" for blurry, noisy, dark, overexposed or glare-heavy crops.
 - **Unfamiliar-input gate:** "CAN'T ASSESS: re-aim" for crops that aren't aircraft skin (people, hands, helmets, hangars: about 6% of photos it never trained on get through; runways 16%) or are unlike any training crop.
-- **Temperature scaling:** the shown % now matches how often the model is right (ECE 0.105 → 0.035).
+- **Temperature scaling:** the shown % now matches how often the model is right (v2: ECE 0.105 → 0.035 with T = 1.34; gc7 under B starts better calibrated, 0.049 → 0.040).
 - **Conformal prediction set:** one class when the model is sure, "AMBIGUOUS: crack or dent" when it isn't. The set holds the true class 91.5% of the time at α = 0.10.
 
 For v2 on normal grouped-test crops, a single wrong class is shown without warning 6.7% of the time, against 20.9%

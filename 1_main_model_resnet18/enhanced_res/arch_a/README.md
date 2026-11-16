@@ -63,10 +63,28 @@ full report in [`results/archB/README.md`](results/archB/README.md).
 | **visor speaks on clean D1 crops** (any message, incl. re-aim) | **28.1%** (22.3–34.4%); 760 never-trained clean crops: 27.6% |
 | CP coverage / mean set size / single answers | 91.0% / 1.54 / 68.8% |
 | single wrong defect class shown without warning | 6.1% |
+| stated confidence vs reality (ECE, 15 bins) | 0.049 → **0.040** with temperature; accuracy unchanged (79.4%) (A: 0.105 → 0.035) |
 | inspector needed | 31.8% (A: 38.5%) |
 | **FGVC undamaged skin patches**: shown as a defect / re-aim / nothing | 23.4% / 71.9% / 4.7% (A: 24.2% shown as a defect) |
 | off-target photos the AoN never saw, shown as a defect | 6.3% (runway 22.0%) |
 | D5 (other photos): coverage / silent miss | 92.0% / 2.2% |
+
+**How the ECE is measured.** Each crop's top-class confidence puts it in one of 15 equal bands (0–6.7%, 6.7–13.3%,
+…, 93.3–100%). In each band, the gap between the mean stated confidence and the share of crops whose top class is
+right is weighted by the band's share of crops, and the gaps are added. Bins only measure; the temperature itself is
+fitted by NLL, without bins. Before temperature, gc7 states 82.8% on average for 79.4% right; after, 79.7%
+([`results/archB/README.md`](results/archB/README.md)). With every photo family weighted equally, the ECE after
+temperature is 0.027 ([`results/archB/family_temperature/`](results/archB/family_temperature/README.md)).
+
+**Blur** ([`results/archB/blur/`](results/archB/blur/README.md); the test half blurred synthetically, report only).
+B has no blur check. With the quality gate off, a blurred crop is stopped only when the OOD gate finds it unfamiliar:
+1.5% of clean crops, 4.0% at Gaussian σ 4 px, 6.8% at a 21 px motion streak (pixels of the 224 px crop). The legacy
+quality gate would not stop many more (4.6% clean, 7.9% at σ 4 px), because D1's crops are already soft: 56% of the
+test defect crops are boxes enlarged to reach 224 px, 29% by 2× or more (`crop_side` in `data/work_fix/crops/D1.csv`).
+Mild blur costs little: at σ 1 px or a 5 px streak (sharpness down to about a quarter), accuracy goes from 79.4% to
+77.0% / 76.9%, CP coverage from 91.0% to 88.8% / 89.3%, and a single wrong class shown without warning stays at about
+6%. Silent misses rise from 0.3% to 1.3–1.5%. Stronger blur lowers coverage below the 90% target (83.3% at σ 4 px)
+and widens the sets (1.52 → 2.01 classes), so more answers go to the inspector. The training augmentation has no blur.
 
 **Original choices, made inside the cal half; historical studies used OOD α 0.08** ([`results/archB/choices.md`](results/archB/choices.md)):
 - **Model: Ahmed's gc7**, not our retrain on the corrected boxes (gc7_fix). On val they are within noise (macro-F1
@@ -203,6 +221,7 @@ Inside `experiments/` and `results/`:
 | **B**: gc7 vs gc7 retrained on the corrected boxes, same crops | `../compare_gc7_fix.py` | [`../results/gc7_fix/compare.md`](../results/gc7_fix/compare.md) |
 | **B**: OOD α, miss guard, damaged images on the silent path (cal half only) | `archB_choose.py` | [`results/archB/choices.md`](results/archB/choices.md) |
 | **B**: the report (test half once, extra_eval, FGVC, off-target, D5, next to A) | `archB_report.py` | [`results/archB/README.md`](results/archB/README.md) |
+| **B**: blur (Gaussian and motion, 10 strengths) on the test half, report only; real blur by sharpness | `archB_blur.py` | [`results/archB/blur/`](results/archB/blur/README.md) |
 | **B**: plain-surface negatives for AoN (tried, left out) | `offtarget_data.py --add-plain`, `calibrate.py --plain-negatives` | [`results/archB/plain_negatives.md`](results/archB/plain_negatives.md) |
 
 Methods: split conformal prediction and LAC (Vovk et al. 2005; Sadinle et al. 2019), APS/RAPS (Romano et al. 2020; Angelopoulos et al. 2021), temperature scaling (Guo et al. 2017), kNN OOD (Sun et al. 2022), conformal outlier p-values (Bates et al. 2023), variance of the Laplacian (Pech-Pacheco et al. 2000).

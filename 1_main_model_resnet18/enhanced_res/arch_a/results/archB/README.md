@@ -12,6 +12,7 @@ Model enhanced_res gc7 (7 classes, with no-defect), crops d1_gc7_fix (D1 with th
 | CP coverage (target 90%) | 91.0% (85.4%–94.9%) |
 | mean set size / single class | 1.54 / 68.8% |
 | single wrong defect class shown without warning | 6.1% |
+| stated confidence vs reality (ECE, 15 bins, every crop) | 0.049 before temperature → **0.040** after (mean stated 82.8% → 79.7%; accuracy 79.4%, unchanged) |
 | "POSSIBLE …: check" / re-aim | 10.4% / 1.5% |
 
 Per class: coverage, and what the visor does.

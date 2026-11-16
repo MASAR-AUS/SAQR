@@ -1,0 +1,351 @@
+{
+ "crops": 2752,
+ "families": 87,
+ "defect_crops": 2417,
+ "no_defect_crops": 335,
+ "clean_vs_cache_max_prob_diff": 5.960464477539063e-08,
+ "levels": [
+  {
+   "level": "clean",
+   "median sharpness": 58.92035102844238,
+   "sharpness left (median of blurred / clean, per crop)": 1.0,
+   "legacy quality gate would stop": 0.04614825581395349,
+   "re-aim (OOD gate)": 0.014898255813953489,
+   "top-class accuracy": 0.793968023255814,
+   "accuracy 95% family interval": [
+    0.7128086569288823,
+    0.8543232349674663
+   ],
+   "7-class macro-F1": 0.745051664387944,
+   "CP coverage of passed crops": 0.9096274437476946,
+   "coverage 95% family interval": [
+    0.8538489120990318,
+    0.9507328386474091
+   ],
+   "mean set size, passed": 1.5182589450387312,
+   "single class, passed": 0.6927333087421615,
+   "shown one class and right": 0.5305232558139535,
+   "single wrong defect class shown without warning": 0.06140988372093023,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.3175872093023256,
+   "silent miss (defect shown nothing)": 0.0033098882912701694,
+   "visor speaks on no-defect crops": 0.28059701492537314
+  },
+  {
+   "level": "gaussian 0.5 px",
+   "median sharpness": 40.78780174255371,
+   "sharpness left (median of blurred / clean, per crop)": 0.7218667666962213,
+   "legacy quality gate would stop": 0.0403343023255814,
+   "re-aim (OOD gate)": 0.014898255813953489,
+   "top-class accuracy": 0.7877906976744186,
+   "accuracy 95% family interval": [
+    0.7056541361225682,
+    0.8505493839484342
+   ],
+   "7-class macro-F1": 0.7388317041652888,
+   "CP coverage of passed crops": 0.9074142382884545,
+   "coverage 95% family interval": [
+    0.8521376369529584,
+    0.9476092823006776
+   ],
+   "mean set size, passed": 1.5064551825894503,
+   "single class, passed": 0.6942087790483217,
+   "shown one class and right": 0.5301598837209303,
+   "single wrong defect class shown without warning": 0.0625,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.31613372093023256,
+   "silent miss (defect shown nothing)": 0.0033098882912701694,
+   "visor speaks on no-defect crops": 0.2746268656716418
+  },
+  {
+   "level": "gaussian 1 px",
+   "median sharpness": 11.67237663269043,
+   "sharpness left (median of blurred / clean, per crop)": 0.22658972652363785,
+   "legacy quality gate would stop": 0.04251453488372093,
+   "re-aim (OOD gate)": 0.018168604651162792,
+   "top-class accuracy": 0.7696220930232558,
+   "accuracy 95% family interval": [
+    0.6727199809646618,
+    0.8410402972448451
+   ],
+   "7-class macro-F1": 0.7123284069001571,
+   "CP coverage of passed crops": 0.8882309400444115,
+   "coverage 95% family interval": [
+    0.823951069000916,
+    0.9349208581384084
+   ],
+   "mean set size, passed": 1.5085122131754256,
+   "single class, passed": 0.6835677276091784,
+   "shown one class and right": 0.5018168604651163,
+   "single wrong defect class shown without warning": 0.06395348837209303,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.3288517441860465,
+   "silent miss (defect shown nothing)": 0.015308233347124535,
+   "visor speaks on no-defect crops": 0.24477611940298508
+  },
+  {
+   "level": "gaussian 1.5 px",
+   "median sharpness": 4.569514751434326,
+   "sharpness left (median of blurred / clean, per crop)": 0.09119155691664527,
+   "legacy quality gate would stop": 0.06686046511627906,
+   "re-aim (OOD gate)": 0.01998546511627907,
+   "top-class accuracy": 0.7638081395348837,
+   "accuracy 95% family interval": [
+    0.6573116034046623,
+    0.8443936454680409
+   ],
+   "7-class macro-F1": 0.691204791382656,
+   "CP coverage of passed crops": 0.8687430478309233,
+   "coverage 95% family interval": [
+    0.7915152498377677,
+    0.9245596096165984
+   ],
+   "mean set size, passed": 1.5554319614386356,
+   "single class, passed": 0.6540600667408232,
+   "shown one class and right": 0.4629360465116279,
+   "single wrong defect class shown without warning": 0.06613372093023256,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.35901162790697677,
+   "silent miss (defect shown nothing)": 0.022341745966073644,
+   "visor speaks on no-defect crops": 0.2417910447761194
+  },
+  {
+   "level": "gaussian 2 px",
+   "median sharpness": 2.8999401330947876,
+   "sharpness left (median of blurred / clean, per crop)": 0.057745817986903474,
+   "legacy quality gate would stop": 0.06831395348837209,
+   "re-aim (OOD gate)": 0.0279796511627907,
+   "top-class accuracy": 0.7420058139534884,
+   "accuracy 95% family interval": [
+    0.626151172317368,
+    0.8265658355158617
+   ],
+   "7-class macro-F1": 0.66369878046087,
+   "CP coverage of passed crops": 0.8680373831775701,
+   "coverage 95% family interval": [
+    0.7871485902357775,
+    0.9267423111086825
+   ],
+   "mean set size, passed": 1.6467289719626168,
+   "single class, passed": 0.6097196261682243,
+   "shown one class and right": 0.42405523255813954,
+   "single wrong defect class shown without warning": 0.05886627906976744,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.40734011627906974,
+   "silent miss (defect shown nothing)": 0.023169218038891187,
+   "visor speaks on no-defect crops": 0.2656716417910448
+  },
+  {
+   "level": "gaussian 3 px",
+   "median sharpness": 2.0092718601226807,
+   "sharpness left (median of blurred / clean, per crop)": 0.036909011918820483,
+   "legacy quality gate would stop": 0.07013081395348837,
+   "re-aim (OOD gate)": 0.03597383720930233,
+   "top-class accuracy": 0.7042151162790697,
+   "accuracy 95% family interval": [
+    0.5934683780720199,
+    0.7901125541298865
+   ],
+   "7-class macro-F1": 0.6245133741176655,
+   "CP coverage of passed crops": 0.8496042216358839,
+   "coverage 95% family interval": [
+    0.7634189139559773,
+    0.9162757526359601
+   ],
+   "mean set size, passed": 1.7712024123633623,
+   "single class, passed": 0.5499434602336977,
+   "shown one class and right": 0.37536337209302323,
+   "single wrong defect class shown without warning": 0.06540697674418605,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.46984011627906974,
+   "silent miss (defect shown nothing)": 0.011998345055854365,
+   "visor speaks on no-defect crops": 0.3522388059701492
+  },
+  {
+   "level": "gaussian 4 px",
+   "median sharpness": 1.7635512351989746,
+   "sharpness left (median of blurred / clean, per crop)": 0.02945221058186199,
+   "legacy quality gate would stop": 0.07921511627906977,
+   "re-aim (OOD gate)": 0.03997093023255814,
+   "top-class accuracy": 0.6664244186046512,
+   "accuracy 95% family interval": [
+    0.5642820051335794,
+    0.7392062130825113
+   ],
+   "7-class macro-F1": 0.5823506935645602,
+   "CP coverage of passed crops": 0.8327024981074943,
+   "coverage 95% family interval": [
+    0.750618842616752,
+    0.8961798128342247
+   ],
+   "mean set size, passed": 2.0113550340651023,
+   "single class, passed": 0.43300529901589707,
+   "shown one class and right": 0.282703488372093,
+   "single wrong defect class shown without warning": 0.053052325581395346,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.5843023255813954,
+   "silent miss (defect shown nothing)": 0.013239553165080678,
+   "visor speaks on no-defect crops": 0.4388059701492537
+  },
+  {
+   "level": "motion 5 px",
+   "median sharpness": 12.670284271240234,
+   "sharpness left (median of blurred / clean, per crop)": 0.2584741110976715,
+   "legacy quality gate would stop": 0.05050872093023256,
+   "re-aim (OOD gate)": 0.018531976744186048,
+   "top-class accuracy": 0.7688953488372093,
+   "accuracy 95% family interval": [
+    0.6696720688264209,
+    0.8428904577737496
+   ],
+   "7-class macro-F1": 0.7056353034233401,
+   "CP coverage of passed crops": 0.892632358385783,
+   "coverage 95% family interval": [
+    0.8315263556342546,
+    0.9396762951272267
+   ],
+   "mean set size, passed": 1.53054424287301,
+   "single class, passed": 0.6730840429470566,
+   "shown one class and right": 0.498546511627907,
+   "single wrong defect class shown without warning": 0.05995639534883721,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.3393895348837209,
+   "silent miss (defect shown nothing)": 0.013239553165080678,
+   "visor speaks on no-defect crops": 0.25671641791044775
+  },
+  {
+   "level": "motion 9 px",
+   "median sharpness": 7.482274293899536,
+   "sharpness left (median of blurred / clean, per crop)": 0.1551783741844956,
+   "legacy quality gate would stop": 0.0501453488372093,
+   "re-aim (OOD gate)": 0.030159883720930234,
+   "top-class accuracy": 0.7539970930232558,
+   "accuracy 95% family interval": [
+    0.6431924694295358,
+    0.8387827626194728
+   ],
+   "7-class macro-F1": 0.6794632636963834,
+   "CP coverage of passed crops": 0.8711127763207194,
+   "coverage 95% family interval": [
+    0.8019994860515913,
+    0.9275978864771467
+   ],
+   "mean set size, passed": 1.5946047208692393,
+   "single class, passed": 0.6350693143499438,
+   "shown one class and right": 0.4589389534883721,
+   "single wrong defect class shown without warning": 0.057412790697674417,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.3840843023255814,
+   "silent miss (defect shown nothing)": 0.01696317749275962,
+   "visor speaks on no-defect crops": 0.3044776119402985
+  },
+  {
+   "level": "motion 15 px",
+   "median sharpness": 4.943119049072266,
+   "sharpness left (median of blurred / clean, per crop)": 0.10192535849770964,
+   "legacy quality gate would stop": 0.055232558139534885,
+   "re-aim (OOD gate)": 0.048328488372093026,
+   "top-class accuracy": 0.7107558139534884,
+   "accuracy 95% family interval": [
+    0.5887820447828533,
+    0.8014453113306858
+   ],
+   "7-class macro-F1": 0.6140243854206628,
+   "CP coverage of passed crops": 0.8350515463917526,
+   "coverage 95% family interval": [
+    0.7498592020324369,
+    0.9047708691910499
+   ],
+   "mean set size, passed": 1.665139366170294,
+   "single class, passed": 0.5979381443298969,
+   "shown one class and right": 0.40988372093023256,
+   "single wrong defect class shown without warning": 0.06795058139534883,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.4309593023255814,
+   "silent miss (defect shown nothing)": 0.01737691352916839,
+   "visor speaks on no-defect crops": 0.3761194029850746
+  },
+  {
+   "level": "motion 21 px",
+   "median sharpness": 3.8842273950576782,
+   "sharpness left (median of blurred / clean, per crop)": 0.08169197564939543,
+   "legacy quality gate would stop": 0.061046511627906974,
+   "re-aim (OOD gate)": 0.06795058139534883,
+   "top-class accuracy": 0.6791424418604651,
+   "accuracy 95% family interval": [
+    0.5564259265052918,
+    0.7745801106723663
+   ],
+   "7-class macro-F1": 0.5701015837956288,
+   "CP coverage of passed crops": 0.8222222222222222,
+   "coverage 95% family interval": [
+    0.7265657439446367,
+    0.8907473016722105
+   ],
+   "mean set size, passed": 1.7621832358674463,
+   "single class, passed": 0.5524366471734893,
+   "shown one class and right": 0.35828488372093026,
+   "single wrong defect class shown without warning": 0.07085755813953488,
+   "flagged for the inspector (ambiguous / possible / re-aim)": 0.4851017441860465,
+   "silent miss (defect shown nothing)": 0.016549441456350848,
+   "visor speaks on no-defect crops": 0.41492537313432837
+  }
+ ],
+ "real_blur_defect_fifths": [
+  {
+   "fifth": 1,
+   "crops": 484,
+   "families": 43,
+   "sharpness range": [
+    0.32409918308258057,
+    4.128049373626709
+   ],
+   "top-class accuracy": 0.7355371900826446,
+   "re-aim": 0.002066115702479339,
+   "CP coverage of passed": 0.8592132505175983,
+   "silent miss": 0.006198347107438017
+  },
+  {
+   "fifth": 2,
+   "crops": 483,
+   "families": 61,
+   "sharpness range": [
+    4.131317615509033,
+    33.913326263427734
+   ],
+   "top-class accuracy": 0.6708074534161491,
+   "re-aim": 0.022774327122153208,
+   "CP coverage of passed": 0.8771186440677966,
+   "silent miss": 0.006211180124223602
+  },
+  {
+   "fifth": 3,
+   "crops": 483,
+   "families": 58,
+   "sharpness range": [
+    34.373958587646484,
+    146.37493896484375
+   ],
+   "top-class accuracy": 0.7681159420289855,
+   "re-aim": 0.004140786749482402,
+   "CP coverage of passed": 0.8835758835758836,
+   "silent miss": 0.0
+  },
+  {
+   "fifth": 4,
+   "crops": 483,
+   "families": 37,
+   "sharpness range": [
+    146.808349609375,
+    326.7903747558594
+   ],
+   "top-class accuracy": 0.8219461697722568,
+   "re-aim": 0.004140786749482402,
+   "CP coverage of passed": 0.9106029106029107,
+   "silent miss": 0.002070393374741201
+  },
+  {
+   "fifth": 5,
+   "crops": 484,
+   "families": 30,
+   "sharpness range": [
+    327.9652404785156,
+    3977.95068359375
+   ],
+   "top-class accuracy": 0.8946280991735537,
+   "re-aim": 0.03512396694214876,
+   "CP coverage of passed": 0.9764453961456103,
+   "silent miss": 0.002066115702479339
+  }
+ ]
+}

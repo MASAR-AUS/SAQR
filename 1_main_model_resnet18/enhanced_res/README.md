@@ -34,6 +34,8 @@
 - **Architecture B** (the calibrated layer on gc7, quality gate off), on the corrected test half: coverage 91.0% at
   CP α = 0.10 and OOD α = 0.05, mean set size 1.54, 0.3% of defects shown as nothing, and the visor speaks on 28.1% of clean crops. OOD false rejection is 1.49%.
   Temperature T = 1.089562 minimizes family-weighted validation NLL (178 families); the CP cutoff is refitted after this step.
+  It brings the test-half calibration error (ECE, 15 bins) from 0.049 to 0.040, accuracy unchanged. gc7 needs less
+  correction than v2 did under architecture A (T = 1.34, ECE 0.105 → 0.035).
   Details in [`arch_a/README.md`](arch_a/README.md) and [`arch_a/results/archB/`](arch_a/results/archB/README.md).
 - **Retrained on the corrected D1 boxes (gc7_fix):** within noise of gc7 on val (macro-F1 0.698 vs 0.704), so gc7
   stays ([`results/gc7_fix/compare.md`](results/gc7_fix/compare.md)).
