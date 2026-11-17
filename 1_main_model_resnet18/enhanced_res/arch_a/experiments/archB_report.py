@@ -5,7 +5,8 @@ From 1_main_model_resnet18/ (after calibrate.py --model gc7 --data d1_gc7_fix an
 
 Nothing is chosen here. The headline question for B is the visor's binary call: does it stay silent on undamaged
 skin, and does it ever stay silent on a defect? A re-aim on undamaged skin counts as the visor speaking.
-  test half      d1_gc7_fix test half (87 families), read once: coverage, silent misses, no-defect shown nothing
+  test half      d1_gc7_fix test half (87 families), read once: coverage, silent misses, no-defect shown nothing,
+                 ECE (15 bins) before and after temperature
   extra_eval     760 no-defect crops never trained on (d1_gc7/extra_eval.csv)
   FGVC / D6      1,000 undamaged skin patches and 500 whole-aircraft crops (never used for any fitting), per crop and
                  per photo (the visor speaks for a photo if any of its crops is shown)
@@ -25,6 +26,7 @@ import torch
 from sklearn.linear_model import LogisticRegression
 
 import archB_common as BC
+from archA_cp import ece
 from archB_common import R
 
 OUT = BC.HERE.parent / "results" / "archB"
@@ -72,6 +74,7 @@ def main():
     lo, hi = BC.family_ci(sm[defect], g[defect])
     flo, fhi = BC.family_ci(fa[clean], g[clean])
     clo, chi = BC.family_ci(hit, g)
+    Pt = R.temper(P, B.T)
     md += ["## Test half (87 families; report only)", "",
            "| | value (95% interval over families) |", "|---|---:|",
            f"| **silent miss**: defect crops shown as nothing | **{pct(sm[defect].mean())}** ({pct(lo)}–{pct(hi)}) |",
@@ -81,6 +84,9 @@ def main():
            f"| CP coverage (target 90%) | {pct(hit.mean())} ({pct(clo)}–{pct(chi)}) |",
            f"| mean set size / single class | {S.sum(1).mean():.2f} / {pct((S.sum(1) == 1).mean())} |",
            f"| single wrong defect class shown without warning | {pct(((a == R.SHOW) & ~hit).mean())} |",
+           f"| stated confidence vs reality (ECE, 15 bins, every crop) | {ece(P, y):.3f} before temperature → "
+           f"**{ece(Pt, y):.3f}** after (mean stated {pct(P.max(1).mean())} → {pct(Pt.max(1).mean())}; accuracy "
+           f"{pct((P.argmax(1) == y).mean())}, unchanged) |",
            f"| \"POSSIBLE …: check\" / re-aim | {pct(np.mean(a == R.POSSIBLE))} / {pct(np.mean(a == R.REAIM))} |",
            "", "Per class: coverage, and what the visor does.", "",
            "| class | crops | coverage | shown nothing | POSSIBLE | re-aim |", "|---|---:|---:|---:|---:|---:|"]
