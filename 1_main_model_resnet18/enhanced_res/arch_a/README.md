@@ -86,6 +86,12 @@ Mild blur costs little: at σ 1 px or a 5 px streak (sharpness down to about a q
 6%. Silent misses rise from 0.3% to 1.3–1.5%. Stronger blur lowers coverage below the 90% target (83.3% at σ 4 px)
 and widens the sets (1.52 → 2.01 classes), so more answers go to the inspector. The training augmentation has no blur.
 
+**Damage with no class** ([`results/archB/unseen_class/`](results/archB/unseen_class/README.md); report only). D5's
+Rupture class does not exist in D1. On 490 rupture crops from 295 D5 photos that are not in D1, B mostly hedges: 40.0%
+AMBIGUOUS and 34.7% POSSIBLE, with 2.57 classes per set (D5's own dents and fastener damage: 1.55). It shows one class
+without a warning on 19.8%, mostly crack at about 87%; D1 itself labels 84% of the rupture photos it contains as crack.
+The gate rarely treats rupture as unfamiliar (3.1% re-aim, median OOD p-value 0.44), and 2.4% are shown as nothing.
+
 **Original choices, made inside the cal half; historical studies used OOD α 0.08** ([`results/archB/choices.md`](results/archB/choices.md)):
 - **Model: Ahmed's gc7**, not our retrain on the corrected boxes (gc7_fix). On val they are within noise (macro-F1
   0.704 vs 0.698, defects called no-defect 3.2% vs 3.1%); one run each
@@ -222,6 +228,7 @@ Inside `experiments/` and `results/`:
 | **B**: OOD α, miss guard, damaged images on the silent path (cal half only) | `archB_choose.py` | [`results/archB/choices.md`](results/archB/choices.md) |
 | **B**: the report (test half once, extra_eval, FGVC, off-target, D5, next to A) | `archB_report.py` | [`results/archB/README.md`](results/archB/README.md) |
 | **B**: blur (Gaussian and motion, 10 strengths) on the test half, report only; real blur by sharpness | `archB_blur.py` | [`results/archB/blur/`](results/archB/blur/README.md) |
+| **B**: damage with no class (D5 rupture, photos not in D1), against D5's known classes and the D1 test half | `archB_unseen_class.py` | [`results/archB/unseen_class/`](results/archB/unseen_class/README.md) |
 | **B**: plain-surface negatives for AoN (tried, left out) | `offtarget_data.py --add-plain`, `calibrate.py --plain-negatives` | [`results/archB/plain_negatives.md`](results/archB/plain_negatives.md) |
 
 Methods: split conformal prediction and LAC (Vovk et al. 2005; Sadinle et al. 2019), APS/RAPS (Romano et al. 2020; Angelopoulos et al. 2021), temperature scaling (Guo et al. 2017), kNN OOD (Sun et al. 2022), conformal outlier p-values (Bates et al. 2023), variance of the Laplacian (Pech-Pacheco et al. 2000).
