@@ -1,0 +1,143 @@
+{
+ "rupture_crops_total": 3788,
+ "rupture_photos_in_d1": 2411,
+ "d1_label_of_rupture_photos": {
+  "crack": 2026,
+  "dent": 212,
+  "corrosion": 125,
+  "background": 19,
+  "paint-peel-off": 17,
+  "scratch": 11,
+  "missing-head": 1
+ },
+ "rupture": {
+  "crops": 490,
+  "groups": 295,
+  "re-aim": 0.030612244897959183,
+  "nothing shown": 0.024489795918367346,
+  "ambiguous": 0.4,
+  "possible": 0.3469387755102041,
+  "one class shown": 0.19795918367346937,
+  "one class shown at 80%+": 0.18775510204081633,
+  "mean confidence when one class is shown": 0.8692940191686432,
+  "classes shown alone": {
+   "crack": 60,
+   "scratch": 19,
+   "dent": 11,
+   "corrosion": 4,
+   "paint-peel-off": 2,
+   "missing-head": 1
+  },
+  "mean set size (not stopped)": 2.5726315789473686,
+  "top class (all crops)": {
+   "crack": 202,
+   "dent": 77,
+   "scratch": 74,
+   "no-defect": 72,
+   "corrosion": 31,
+   "paint-peel-off": 25,
+   "missing-head": 9
+  },
+  "median OOD p-value": 0.4375065637089486,
+  "re-aim 95% family interval": [
+   0.016492310292377896,
+   0.046747967479674794
+  ],
+  "nothing shown 95% family interval": [
+   0.01050365114599299,
+   0.04181875237732978
+  ],
+  "one class shown 95% family interval": [
+   0.1598348200081191,
+   0.23427931775862398
+  ]
+ },
+ "d5_known_classes": {
+  "crops": 1008,
+  "groups": 276,
+  "re-aim": 0.002976190476190476,
+  "nothing shown": 0.021825396825396824,
+  "ambiguous": 0.251984126984127,
+  "possible": 0.05853174603174603,
+  "one class shown": 0.6646825396825397,
+  "one class shown at 80%+": 0.6567460317460317,
+  "mean confidence when one class is shown": 0.9170366282866663,
+  "classes shown alone": {
+   "missing-head": 595,
+   "dent": 54,
+   "corrosion": 12,
+   "scratch": 6,
+   "crack": 2,
+   "paint-peel-off": 1
+  },
+  "mean set size (not stopped)": 1.5532338308457712,
+  "top class (all crops)": {
+   "missing-head": 732,
+   "dent": 120,
+   "corrosion": 60,
+   "scratch": 39,
+   "no-defect": 35,
+   "paint-peel-off": 15,
+   "crack": 7
+  },
+  "median OOD p-value": 1.0,
+  "re-aim 95% family interval": [
+   0.0,
+   0.009698275862068966
+  ],
+  "nothing shown 95% family interval": [
+   0.005401849217638692,
+   0.04738042286013178
+  ],
+  "one class shown 95% family interval": [
+   0.6066687684779192,
+   0.714756435675484
+  ],
+  "one class shown and right": 0.6408730158730159,
+  "one class shown and wrong": 0.023809523809523808
+ },
+ "d1_test_half_defects": {
+  "crops": 2417,
+  "groups": 87,
+  "re-aim": 0.01365328920148945,
+  "nothing shown": 0.0033098882912701694,
+  "ambiguous": 0.22589987587918908,
+  "possible": 0.0860570955730244,
+  "one class shown": 0.6710798510550269,
+  "one class shown at 80%+": 0.6615639222176252,
+  "mean confidence when one class is shown": 0.8783791775249302,
+  "classes shown alone": {
+   "dent": 892,
+   "crack": 322,
+   "corrosion": 136,
+   "paint-peel-off": 120,
+   "missing-head": 116,
+   "scratch": 36
+  },
+  "mean set size (not stopped)": 1.5398489932885906,
+  "top class (all crops)": {
+   "dent": 1116,
+   "crack": 541,
+   "corrosion": 236,
+   "paint-peel-off": 209,
+   "missing-head": 139,
+   "scratch": 94,
+   "no-defect": 82
+  },
+  "median OOD p-value": 0.9062212712727281,
+  "re-aim 95% family interval": [
+   0.004630549360689861,
+   0.028225228573336543
+  ],
+  "nothing shown 95% family interval": [
+   0.0011747244679714615,
+   0.006361779709509721
+  ],
+  "one class shown 95% family interval": [
+   0.5790956446979164,
+   0.7384829553131321
+  ],
+  "one class shown and right": 0.604054613156806,
+  "one class shown and wrong": 0.06702523789822093
+ }
+}
