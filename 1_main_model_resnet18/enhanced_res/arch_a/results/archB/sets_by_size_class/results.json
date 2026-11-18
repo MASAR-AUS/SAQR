@@ -1,0 +1,271 @@
+{
+ "model": "gc7",
+ "data": "d1_gc7_fix",
+ "T": 1.0895623515239266,
+ "alpha": 0.1,
+ "alpha_ood": 0.05,
+ "accuracy": {
+  "full test, 7 classes, every crop": {
+   "value": 0.8038208709942481,
+   "crops": 4868
+  },
+  "full test, defect crops, top answer of 7": {
+   "value": 0.7883846696449565,
+   "crops": 4253
+  },
+  "full test, defect crops, best of the 6 defect classes": {
+   "value": 0.8109569715494944,
+   "crops": 4253
+  },
+  "test half, 7 classes, every crop": {
+   "value": 0.793968023255814,
+   "crops": 2752
+  },
+  "test half, defect crops, best of the 6 defect classes": {
+   "value": 0.8001654944145635,
+   "crops": 2417
+  },
+  "cal half, 7 classes, every crop": {
+   "value": 0.8166351606805293,
+   "crops": 2116
+  }
+ },
+ "macro_f1_full_test": 0.7517024192248031,
+ "passed_test_crops": 2711,
+ "coverage_passed": 0.9096274437476946,
+ "coverage_all": 0.9102470930232558,
+ "by_set_size": [
+  {
+   "size": 1,
+   "crops": 1878,
+   "share": 0.6927333087421615,
+   "coverage": 0.9057507987220448,
+   "coverage_95": [
+    0.8304436016665635,
+    0.9540309562870438
+   ],
+   "top_class_right": 0.9057507987220448,
+   "visor": {
+    "show class": 1629,
+    "nothing shown": 249
+   }
+  },
+  {
+   "size": 2,
+   "crops": 468,
+   "share": 0.17263002582073037,
+   "coverage": 0.8974358974358975,
+   "coverage_95": [
+    0.8370360195360195,
+    0.9493142072133626
+   ],
+   "top_class_right": 0.655982905982906,
+   "visor": {
+    "ambiguous": 351,
+    "possible defect": 117
+   }
+  },
+  {
+   "size": 3,
+   "crops": 211,
+   "share": 0.07783105864994468,
+   "coverage": 0.9289099526066351,
+   "coverage_95": [
+    0.8727272727272727,
+    0.9698614896516481
+   ],
+   "top_class_right": 0.4218009478672986,
+   "visor": {
+    "ambiguous": 120,
+    "possible defect": 91
+   }
+  },
+  {
+   "size": 4,
+   "crops": 105,
+   "share": 0.03873109553670232,
+   "coverage": 0.9619047619047619,
+   "coverage_95": [
+    0.9210461177696717,
+    0.990990990990991
+   ],
+   "top_class_right": 0.4666666666666667,
+   "visor": {
+    "ambiguous": 55,
+    "possible defect": 50
+   }
+  },
+  {
+   "size": 5,
+   "crops": 45,
+   "share": 0.016599040944300997,
+   "coverage": 0.9777777777777777,
+   "coverage_95": [
+    0.9188626126126127,
+    1.0
+   ],
+   "top_class_right": 0.4222222222222222,
+   "visor": {
+    "ambiguous": 22,
+    "possible defect": 23
+   }
+  },
+  {
+   "size": 6,
+   "crops": 4,
+   "share": 0.0014754703061600886,
+   "coverage": 1.0,
+   "coverage_95": [
+    1.0,
+    1.0
+   ],
+   "top_class_right": 0.0,
+   "visor": {
+    "possible defect": 4
+   }
+  }
+ ],
+ "per_class": [
+  {
+   "class": "corrosion",
+   "test_crops": 257,
+   "test_families": 17,
+   "cal_crops": 116,
+   "cal_families": 13,
+   "global": {
+    "coverage": 0.8015564202334631,
+    "mean_set": 1.6381322957198443,
+    "single": 0.669260700389105
+   },
+   "mondrian": {
+    "cut_off": 0.009703894135635438,
+    "coverage": 1.0,
+    "mean_set": 2.21011673151751,
+    "single": 0.47470817120622566
+   }
+  },
+  {
+   "class": "crack",
+   "test_crops": 636,
+   "test_families": 39,
+   "cal_crops": 657,
+   "cal_families": 34,
+   "global": {
+    "coverage": 0.8726415094339622,
+    "mean_set": 1.8946540880503144,
+    "single": 0.5566037735849056
+   },
+   "mondrian": {
+    "cut_off": 0.013837484496717956,
+    "coverage": 0.9622641509433962,
+    "mean_set": 3.470125786163522,
+    "single": 0.0015723270440251573
+   }
+  },
+  {
+   "class": "dent",
+   "test_crops": 1129,
+   "test_families": 35,
+   "cal_crops": 610,
+   "cal_families": 34,
+   "global": {
+    "coverage": 0.9530558015943312,
+    "mean_set": 1.3365810451727191,
+    "single": 0.7635075287865367
+   },
+   "mondrian": {
+    "cut_off": 0.05114069756778428,
+    "coverage": 0.9557130203720107,
+    "mean_set": 3.483613817537644,
+    "single": 0.002657218777679362
+   }
+  },
+  {
+   "class": "missing-head",
+   "test_crops": 132,
+   "test_families": 17,
+   "cal_crops": 211,
+   "cal_families": 12,
+   "global": {
+    "coverage": 0.9696969696969697,
+    "mean_set": 1.1363636363636365,
+    "single": 0.8863636363636364
+   },
+   "mondrian": {
+    "cut_off": 0.16318325356394792,
+    "coverage": 0.9545454545454546,
+    "mean_set": 2.143939393939394,
+    "single": 0.015151515151515152
+   }
+  },
+  {
+   "class": "paint-peel-off",
+   "test_crops": 142,
+   "test_families": 26,
+   "cal_crops": 123,
+   "cal_families": 21,
+   "global": {
+    "coverage": 0.8591549295774648,
+    "mean_set": 1.7464788732394365,
+    "single": 0.5845070422535211
+   },
+   "mondrian": {
+    "cut_off": 0.06754274827158879,
+    "coverage": 0.852112676056338,
+    "mean_set": 2.7464788732394365,
+    "single": 0.11971830985915492
+   }
+  },
+  {
+   "class": "scratch",
+   "test_crops": 121,
+   "test_families": 12,
+   "cal_crops": 74,
+   "cal_families": 16,
+   "global": {
+    "coverage": 0.7603305785123967,
+    "mean_set": 1.8677685950413223,
+    "single": 0.4628099173553719
+   },
+   "mondrian": {
+    "cut_off": 0.021718546282862072,
+    "coverage": 0.8925619834710744,
+    "mean_set": 2.677685950413223,
+    "single": 0.2644628099173554
+   }
+  },
+  {
+   "class": "no-defect",
+   "test_crops": 335,
+   "test_families": 81,
+   "cal_crops": 274,
+   "cal_families": 80,
+   "global": {
+    "coverage": 0.9731343283582089,
+    "mean_set": 1.4,
+    "single": 0.7432835820895523
+   },
+   "mondrian": {
+    "cut_off": 0.36257799312530725,
+    "coverage": 0.9104477611940298,
+    "mean_set": 2.7313432835820897,
+    "single": 0.011940298507462687
+   }
+  }
+ ],
+ "overall": {
+  "global": {
+   "cut_off": 0.06263992766665538,
+   "coverage": 0.9102470930232558,
+   "mean_set": 1.5363372093023255,
+   "single": 0.6878633720930233,
+   "lowest_class": "scratch"
+  },
+  "mondrian": {
+   "coverage": 0.9476744186046512,
+   "mean_set": 3.1322674418604652,
+   "single": 0.06577034883720931,
+   "lowest_class": "paint-peel-off"
+  }
+ }
+}

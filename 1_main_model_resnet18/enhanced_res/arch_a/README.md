@@ -92,6 +92,15 @@ AMBIGUOUS and 34.7% POSSIBLE, with 2.57 classes per set (D5's own dents and fast
 without a warning on 19.8%, mostly crack at about 87%; D1 itself labels 84% of the rupture photos it contains as crack.
 The gate rarely treats rupture as unfamiliar (3.1% re-aim, median OOD p-value 0.44), and 2.4% are shown as nothing.
 
+**Coverage per set size and per class** ([`results/archB/sets_by_size_class/`](results/archB/sets_by_size_class/README.md);
+report only). On the 2,711 test-half crops the gate lets through, one-class sets hold the true class 90.6% of the time,
+two-class sets 89.7%, and sets of three or more 93–100%, while their top class alone is right only 42–47% of the time.
+Per class, the global cut-off over-covers easy classes (dent 95.3%, missing-head 97.0%, no-defect 97.3%) and
+under-covers the hardest (scratch 76.0%, corrosion 80.2%). One cut-off per class (Mondrian) lifts those, but the mean
+set grows from 1.54 to 3.13 classes and single answers fall from 68.8% to 6.6%, so B keeps one cut-off. The same file
+says which accuracy is which: 80.4% over all 4,868 test crops, 81.1% on the 4,253 defect crops when only the six defect
+classes are ranked, and 79.4% on the 2,752 test-half crops that the uncertainty numbers use.
+
 **Original choices, made inside the cal half; historical studies used OOD α 0.08** ([`results/archB/choices.md`](results/archB/choices.md)):
 - **Model: Ahmed's gc7**, not our retrain on the corrected boxes (gc7_fix). On val they are within noise (macro-F1
   0.704 vs 0.698, defects called no-defect 3.2% vs 3.1%); one run each
@@ -229,6 +238,7 @@ Inside `experiments/` and `results/`:
 | **B**: the report (test half once, extra_eval, FGVC, off-target, D5, next to A) | `archB_report.py` | [`results/archB/README.md`](results/archB/README.md) |
 | **B**: blur (Gaussian and motion, 10 strengths) on the test half, report only; real blur by sharpness | `archB_blur.py` | [`results/archB/blur/`](results/archB/blur/README.md) |
 | **B**: damage with no class (D5 rupture, photos not in D1), against D5's known classes and the D1 test half | `archB_unseen_class.py` | [`results/archB/unseen_class/`](results/archB/unseen_class/README.md) |
+| **B**: coverage per set size and per class (global cut-off against Mondrian), and which accuracy is which | `archB_sets_by_size_class.py` | [`results/archB/sets_by_size_class/`](results/archB/sets_by_size_class/README.md) |
 | **B**: plain-surface negatives for AoN (tried, left out) | `offtarget_data.py --add-plain`, `calibrate.py --plain-negatives` | [`results/archB/plain_negatives.md`](results/archB/plain_negatives.md) |
 
 Methods: split conformal prediction and LAC (Vovk et al. 2005; Sadinle et al. 2019), APS/RAPS (Romano et al. 2020; Angelopoulos et al. 2021), temperature scaling (Guo et al. 2017), kNN OOD (Sun et al. 2022), conformal outlier p-values (Bates et al. 2023), variance of the Laplacian (Pech-Pacheco et al. 2000).
