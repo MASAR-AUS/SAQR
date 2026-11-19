@@ -84,7 +84,7 @@ photo group), so its accuracy figure is honest. All of them come from the test s
 
 - Batch → **Run the 35 samples**: 35 held-out test crops (5 per class, `no-defect_*` included). The top class is right
   for 31 of 35 (88.6%), including all 5 no-defect samples (their visor decisions are recalculated using the current OOD and CP calibration).
-- Model page: the headline reads **81.1%** (the right defect class on 4,253 unseen defect crops, corrected labels),
+- Model page: the headline reads **80.4%** (top class right on all 4,868 unseen test crops, 7 classes, corrected labels),
   macro-F1 **0.752** over all 7 classes, the answer holds the true class **91.0%** of the time, and 0.3% of defects
   are shown as no defect. OOD α is **0.05** (0.025 per detector), with **1.49%** false rejection; CP α stays **0.10**.
 - Tests (optional):
