@@ -44,3 +44,9 @@
 @media (max-width: 860px) {
   .title-stage .sketch, .saqr-logo { will-change: transform; }
 }
+/* static dash, phones: no pinned run and no un-drawing. The title is one screen tall (svh, so it doesn't jump when the
+   address bar hides) and scrolls away with the helmet still drawn; the un-draw on scroll is for laptops only */
+@media (max-width: 860px) {
+  .title-run { height: auto; }
+  .title-stage { position: relative; top: auto; height: calc(100svh - var(--topbar)); }
+}

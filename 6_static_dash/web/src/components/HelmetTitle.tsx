@@ -21,6 +21,9 @@ export function HelmetTitle({ step }: { step?: number }) {
     const fill = logo.current?.querySelector<SVGElement>(".logo-fill");
     const INTRO_MS = 1800, t0 = performance.now();
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // static dash, phones: the title scrolls away like the rest of the page with the helmet left drawn; only a
+    // laptop-sized window pins it and un-draws it on scroll (the breakpoint matches title.css)
+    const phone = matchMedia("(max-width: 860px)");
     let intro = reduce ? 1 : 0, raf = 0;
 
     // static dash: smooth on phones. The scroll position is worked out from measurements taken once (and again on
@@ -46,7 +49,7 @@ export function HelmetTitle({ step }: { step?: number }) {
       if (intro < 1) intro = Math.min(1, (now - t0) / INTRO_MS);
       if (!geo) measure();
       if (!geo) return;
-      const slid = Math.min(geo.span, Math.max(0, scrollY + geo.pin - geo.top));   // how far the pinned stage has moved
+      const slid = phone.matches ? 0 : Math.min(geo.span, Math.max(0, scrollY + geo.pin - geo.top));   // how far the pinned stage has moved
       const erase = Math.round(Math.min(1, slid / (geo.span * 0.85)) * 500) / 500;
       if (erase === prevErase && intro === prevIntro) { if (intro < 1) raf = requestAnimationFrame(paint); return; }
       prevErase = erase; prevIntro = intro;
@@ -69,13 +72,14 @@ export function HelmetTitle({ step }: { step?: number }) {
       if (intro < 1) raf = requestAnimationFrame(paint);
     };
     const near = watchNear(run.current!, () => { if (!raf) raf = requestAnimationFrame(paint); });
-    const onScroll = () => { if (near.near && !raf) raf = requestAnimationFrame(paint); };
-    const onResize = () => { geo = null; onScroll(); };
+    const onScroll = () => { if (!phone.matches && near.near && !raf) raf = requestAnimationFrame(paint); };
+    const onResize = () => { geo = null; if (!raf) raf = requestAnimationFrame(paint); };
     raf = requestAnimationFrame(paint);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
+    phone.addEventListener("change", onResize);
     void document.fonts?.ready.then(onResize);
-    return () => { near.stop(); cancelAnimationFrame(raf); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onResize); };
+    return () => { near.stop(); cancelAnimationFrame(raf); window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onResize); phone.removeEventListener("change", onResize); };
   }, []);
 
   return (
